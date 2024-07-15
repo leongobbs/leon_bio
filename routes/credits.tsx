@@ -4,7 +4,7 @@ import { IS_BROWSER } from "https://deno.land/x/fresh@1.0.1/runtime.ts";
 
 const markdownFile = "Credits.md";
 const baseUrl = Deno.env.get("IS_PROD")
-  ? "https://deno-blog.deno.dev"
+  ? "https://leon.bio/"
   : "http://localhost:8000";
 
 export const handler: Handlers = {
