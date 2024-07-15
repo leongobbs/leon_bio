@@ -2,24 +2,31 @@
 import { useState, useEffect } from 'preact/hooks';
 
 export default function MenuLink() {
-  const [href, setHref] = useState("");
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const currentHref = window.location.href;
-    console.log("Current Href:", currentHref); // Логируем текущий URL
+    // Проверяем, выполняется ли код в браузере
     if (typeof window !== "undefined") {
-      setHref(currentHref);
+      console.log("Running in browser"); // Логирование при выполнении в браузере
+      setIsClient(true); // Устанавливаем состояние в true, если код выполняется в браузере
     } else {
-      console.error("Window is undefined"); // Логируем ошибку, если window недоступен
+      console.log("Running on server"); // Логирование при выполнении на сервере
     }
   }, []);
 
-  const basePath = "/"; // Обновите базовый путь, если необходимо
-  const link = href.endsWith("/") || href.endsWith(`${basePath}index.html`) ? `${basePath}about` : basePath;
-  const linkText = href.endsWith("/") || href.endsWith(`${basePath}index.html`) ? "About" : "Home";
+  // Определяем ссылку и текст ссылки
+  let link = "/";
+  let linkText = "Home";
 
+  if (isClient) {
+    link = window.location.href.endsWith("/") ? "/about" : "/";
+    linkText = window.location.href.endsWith("/") ? "About" : "Home";
+  }
+
+  // Возвращаем JSX разметку
   return (
     <div class="text-right text-m">
+      {/* Создаем ссылку с подчеркиванием и соответствующим URL и текстом */}
       <a class="underline" href={link}>{linkText}</a>
     </div>
   );

@@ -17,8 +17,8 @@ export const handler: Handlers = {
       contents = `# File Not Found: ${path}`;
     }
     const baseUrl = Deno.env.get("IS_PROD")
-      ? "https://leon.bio"
-      : "http://localhost:8000";
+      ? "http://leongobbs-leon-bio-78.deno.dev"
+      : "http://localhost:8001";
     const blog = render(contents, { baseUrl });
     return ctx.render({ blog });
   },
