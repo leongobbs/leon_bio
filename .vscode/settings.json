@@ -1,0 +1,12 @@
+{
+  "deno.enable": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
+
+  "cSpell.words": [
+    "deno",
+    "Hono",
+    "Preact",
+    "readlines",
+    "versionstamp"
+  ]
+}

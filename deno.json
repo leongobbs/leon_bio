@@ -1,0 +1,26 @@
+{
+  "tasks": {
+    "start": "DENO_DEPLOYMENT_ID=12345 deno run -A --watch=static/,routes/ dev.ts",
+    "test": "deno test -A",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts"
+  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.5.1/",
+    "preact": "https://esm.sh/preact@10.18.1",
+    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
+    "twind": "https://esm.sh/twind@0.16.19",
+    "twind/": "https://esm.sh/twind@0.16.19/",
+    "gfm": "https://deno.land/x/gfm@0.1.22/mod.ts",
+    "std/": "https://deno.land/std@0.202.0/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "$fresh-testing-library": "https://deno.land/x/fresh_testing_library@0.11.0/mod.ts",
+    "$fresh-testing-library/": "https://deno.land/x/fresh_testing_library@0.11.0/",
+    "feed": "https://esm.sh/feed@4.2.2"
+  },
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "exclude": ["**/_fresh/*"]
+}
