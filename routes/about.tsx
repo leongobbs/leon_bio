@@ -3,7 +3,7 @@ import { CSS, render } from "gfm";
 
 const markdownFile = "About.md";
 const baseUrl = Deno.env.get("IS_PROD")
-  ? "https://leongobbs-leon-bio-78.deno.dev"
+  ? "http://leongobbs-leon-bio-78.deno.dev"
   : "http://localhost:8001";
 
 export const handler: Handlers = {
