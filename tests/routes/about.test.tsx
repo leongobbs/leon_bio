@@ -18,7 +18,7 @@ Deno.test("routes/About.tsx handler tests...", async (t) => {
   await t.step("should respond to GET request in PROD...", async () => {
     Deno.env.set("IS_PROD", "true");
     assert(handler.GET);
-    const req = new Request("https://leon.bio//about");
+    const req = new Request("https://leon.bio/about");
     // @ts-ignore manifest typing
     const ctx = createHandlerContext(req, { manifest });
 
