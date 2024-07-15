@@ -1,9 +1,20 @@
+import { useState, useEffect } from 'preact/hooks';
+
 export default function MenuLink() {
-  // Получаем текущий URL или пустую строку, если URL недоступен
-  const href = window.location?.href || "";
-  // Проверяем, заканчивается ли URL на "/" или "/index.html", чтобы установить правильный линк
+  // Создаем состояние для хранения текущего URL
+  const [href, setHref] = useState("");
+
+  // Хук useEffect выполняется после монтирования компонента
+  useEffect(() => {
+    // Проверяем, выполняется ли код в браузере
+    if (typeof window !== "undefined") {
+      // Обновляем состояние с текущим URL
+      setHref(window.location.href);
+    }
+  }, []);
+
+  // Определяем ссылку и текст ссылки в зависимости от текущего URL
   const link = href.endsWith("/") || href.endsWith("/index.html") ? "/about" : "/";
-  // Устанавливаем текст ссылки в зависимости от текущего URL
   const linkText = href.endsWith("/") || href.endsWith("/index.html") ? "About" : "Home";
 
   // Возвращаем JSX разметку
