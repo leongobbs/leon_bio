@@ -11,6 +11,7 @@ export default function App({ Component }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Leon.bio: Live Energy Organic Nutrition with AI biotechnology</title>
         <link rel="stylesheet" href={asset("style.css")} />
+        <link rel="canonical" href="https://leon.bio/"/>
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link
           rel="apple-touch-icon"
