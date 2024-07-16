@@ -4,12 +4,12 @@ import { CSS, render } from "gfm";
 const markdownFile = "About.md";
 const baseUrl = Deno.env.get("IS_PROD")
   ? "http://leongobbs-leon-bio-78.deno.dev"
-  : "http://localhost:8001";
+  : "http://localhost:8000";
 
 export const handler: Handlers = {
   async GET(_: Request, ctx: HandlerContext) {
     const fileName = markdownFile;
-    const path = `${Deno.cwd()}/static/${fileName}`;
+    const path = `${Deno.cwd()}/static/js/${fileName}`;
     const contents = await Deno.readTextFile(path);
     const blog = render(contents, { baseUrl });
     return ctx.render({ blog });

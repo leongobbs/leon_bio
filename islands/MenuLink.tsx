@@ -21,6 +21,7 @@ export default function MenuLink() {
   if (isClient) {
     link = window.location.href.endsWith("/") ? "/about" : "/";
     linkText = window.location.href.endsWith("/") ? "About" : "Home";
+    console.log(link)
   }
 
   // Возвращаем JSX разметку
