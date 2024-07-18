@@ -6,7 +6,7 @@ import { CSS, render } from "gfm";
 export const handler: Handlers = {
   async GET(req: Request, _ctx: HandlerContext) {
     const feed = new Feed({
-      title: "Craig's Deno Diary",
+      title: "Craig's Deno Diary test",
       description:
         "Craig's Deno Diary is a blog that covers the JavaScript and TypeScript runtime Deno and focuses on how to write Deno programs and use Deno libraries.",
       id: "https://deno-blog.com/",
